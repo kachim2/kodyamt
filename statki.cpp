@@ -18,7 +18,7 @@ void wys(bool (&gracz)[10][10]){
 }
 
 void ustaw(bool (&gracz)[10][10]){
-	for ( int i = 0; i < 10; i++) {
+	for ( int i = 0; i < 8; i++) {
 		cout << "Gdzie chcesz statek?\n";
 		int statekposx = 0, statekposy = 0;
 		cin >> statekposx >> statekposy;
@@ -41,11 +41,40 @@ void ustaw(bool (&gracz)[10][10]){
 bool gracz1[10][10];
 bool gracz2[10][10];
 int main(){
-cout << "Graczu 1 podaj statki."
+cout << "Graczu 1 podaj statki.";
 ustaw(gracz1);
-cout << "Graczu 2 podaj statki."
+system ("cls");
+cout << "Graczu 2 podaj statki.";
+cin >> gracz1[0][0];
 ustaw(gracz2);
 
+while(true){
+	
+	while(true){
+	cout <<"Graczu 1 gdzie strzelasz?";
+	int x, y;
+	cin >>	x >> y;
+	if(gracz2[x][y]){
+		gracz2[x][y] = 0;
+		cout << "trafiles";	
+	} 
+	else {
+		cout << "chybiles"
+	break;}
+	}
+		while(true){
+	cout <<"Graczu 2 gdzie strzelasz?";
+	int x, y;
+	cin >>	x >> y;
+	if(gracz1[x][y]){
+		gracz1[x][y] = 0;
+		cout << "trafiles";	
+	} 
+	else {
+		cout << "chybiles"
+	break;}
+	}
+}
 
 
 
